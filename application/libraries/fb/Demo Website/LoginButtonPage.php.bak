@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:fb="http://www.facebook.com/2008/fbml">
+    <head>
+       <title>Facebook Graph API Login Button PHP class</title>
+       <meta name="description" content="PHP Example of creting Facebook Login Button using the Graph API." />
+       <link rel="stylesheet" type="text/css" href="styles.css" />
+    </head>
+    <body>
+        <center>
+            <div style="width:1000px; text-align: left">
+                <?php
+                    require_once 'facebook.php';
+                    require_once 'faceconn/faceconn.php';
+                    UseGraphAPI();
+                    include "Banner.php";
+                ?>
+                <div style="padding: 10px">
+                    <br />
+                    <h1>Facebook Login Button</h1>
+                    
+                    <p style="text-align: justify">
+                    Login Button control is used to connect a web site to the Facebook and allow it to use the Facebook API. It also enables the user that once he is logged, all controls from this list will 
+                    work without additional logging. It is also possible to define JavaScript code which will be executed after user is successfully logged or form id which will be submitted which allow
+                    redirection of another page or resubmitting the current page.
+
+                    <br /><br />
+                    For all details about the control with description of all optional properties please visit
+                    <b><a href="http://faceconn.com/facebook-login-button-php">Facebook Login Button Tutorial</a></b>.
+                    <br /><br />
+                     <?php include "Links.php"; ?>
+                     <br /><br />
+
+                    <b>Example:</b><br /><br />
+                    The example demonstrates login button configured with all optional parameters. Below the login button is code used for configuration. Press on login button to see how it works. 
+                    When you press it, popup window will be shown to enter your Facebook credentials. After you successful login you will be asked to approve using of extended permissions for the 
+                    website (this example shows sending of SMS and creating of event). After confirmation you will be redirected to another page where your basic profile data will be shown. There is
+                    also an option to set JavaScript code which will be executed after successful login.ž
+                    </p>
+                    <br /><br />
+                    <form id="form1" action="UserDataPage.php">
+                        <?php
+                            // creating new instande of Login Button
+                            $login = new LoginButton();
+
+                            // Optional: setting text and size
+                            $login->SetText("Sign up with Facebook");
+                            $login->SetSize("small");
+
+                            // Optional: setting list of extended permissions
+                            $login->SetPermissions("offline_access, email");
+
+                            // Optional: setting the form id which will be submitted
+                            // on successfull login (redirect on User Data page)
+                            $login->SetOnLoginSubmitForm("form1");
+
+                            // Render commmand on the page
+                            $login->Render();
+
+                            // show the code example
+                            echo "<br /><br />";
+                            include 'CodeExamples/LoginButtonExample.php';
+                        ?>
+                    </form>
+                </div>
+            </div>
+        </center>
+    </body>
+</html>

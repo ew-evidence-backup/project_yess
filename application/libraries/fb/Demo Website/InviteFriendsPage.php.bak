@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:fb="http://www.facebook.com/2008/fbml">
+    <head>
+       <title>Facebook Graph API Invite Friends PHP class</title>
+       <meta name="description" content="PHP Example of creting Facebook Invite Friends using the Graph API." />
+       <link rel="stylesheet" type="text/css" href="styles.css" />
+    </head>
+    <body>
+         <center>
+            <div style="width:1000px; text-align: left">
+                <form id="form1" action="InviteFriendsPage.php">
+                    <?php
+                        require_once 'facebook.php';
+                        require_once 'faceconn/faceconn.php';
+                        UseGraphAPI();
+                        include "Banner.php";
+                    ?>
+                    <div style="padding: 10px">
+                        <br />
+                        <h1>Facebook Invite Friends</h1>
+                       
+                        <p style="text-align: justify">
+                        Facebook Invite control uses to invite friends on using Facebook application or Facebook Connect website by sending invite requests. There are 2 types of invite control: 
+                        a classic one and condensed. Following examples demonstrates each of these 2 types and PHP code for configuring each of them. If there are no friends on displayed controls
+                         please login on Facebook with login button located on top right corner.
+                        <br /><br />
+                        For all details about the controls with description of all optional properties please visit
+                        <b><a href="http://faceconn.com/facebook-invite-friends-php">Facebook Invite Friends Tutorial</a></b>.
+                        <br /><br />
+                        </p>
+                        <?php include "Links.php"; ?>
+                        <br /><br />
+                        <b>Attention:</b> Facebook Invite Friends will not be displayed properly if your are not logged on Facebook.
+                            Please press "Connect with Facebook" button to log in.
+                            <br /><br /><br />
+
+                        <b>Invite Friends Classic</b><br /><br />
+                        <?php
+                            // create instance of login control
+                            $invite1 = new InviteFriends();
+
+                            // set main title of the control
+                            $invite1->SetMainTitle("Main title");
+
+                            // set content inside invite request
+                            $invite1->SetContent("This is content of invite request.");
+
+                            // render the command
+                            $invite1->Render();
+
+                            // show the code example
+                            echo "<br /><br />";
+                            include 'CodeExamples/InviteFriendsClassicExample.php';
+                        ?>
+                        <br /><br /><br />
+
+
+                         <b>Invite Friends Condensed</b><br /><br />
+                        <?php
+                            // create instance of login control
+                            $invite2 = new InviteFriendsCondensed();
+
+                            // set content inside invite request
+                            $invite2->SetContent("This is content of invite request.");
+
+                            // render the command
+                            $invite2->Render();
+
+                            // show the code example
+                            echo "<br /><br />";
+                            include 'CodeExamples/InviteFriendsCondensedExample.php';
+                        ?>
+                    </div>
+                </form>
+            </div>
+         </center>
+    </body>
+</html>

@@ -1,0 +1,49 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns:fb="http://www.facebook.com/2008/fbml" xmlns:og="http://opengraphprotocol.org/schema/">
+    <head>
+       <title>Facebook Graph API Bookmark Button PHP class</title>
+       <meta name="description" content="PHP Example of creting Facebook Bookmark Button using the Graph API." />
+       <link rel="stylesheet" type="text/css" href="styles.css" />
+    </head>
+    <body>
+         <center>
+            <div style="width:1000px; text-align: left">
+                <form id="form1" action="StreamPublishPage.php">
+                    <?php
+                        require_once 'facebook.php';
+                        require_once 'faceconn/faceconn.php';
+                        UseGraphAPI();
+                        include "Banner.php";
+                    ?>
+                    <div style="padding: 10px">
+                        <br />
+                        <h1>Bookmark Button</h1>
+                        
+                        <p style="text-align: justify">
+                        With Bookmark button users can easily bookmark your website inside the Facebook environment. If you don't see Bookmark button, you should log in to
+                        Facebook first by using the Login Button. Once an application is bookmarked, the button will not be displayed anymore. The example show PHP code of
+                        how to add bookmark button on a page.
+                        <br /><br />
+                        For all details about the control with description of all optional properties please visit
+                        <b><a href="http://faceconn.com/facebook-bookmark-button-php">Facebook Bookmark Button Tutorial</a></b>.
+                        <br /><br />
+                        <?php include "Links.php"; ?>
+                        
+                        <br /><br />
+                        
+                        </p>
+                        <?php
+                            // create new instance of the control and render
+                            $bookmark = new Bookmark();
+                            $bookmark->Render();
+
+                            // show the code example
+                            echo "<br /><br />";
+                            include 'CodeExamples/BookmarkExample.php';
+                        ?>
+                    </div>
+                </form>
+            </div>
+         </center>
+    </body>
+</html>

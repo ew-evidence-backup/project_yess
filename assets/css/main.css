@@ -1,0 +1,17 @@
+#footer_options {
+    text-align: center;
+    font-weight:bolder;
+    font-size:25px;
+}
+#footer_menu {
+    text-align: left;
+}
+#footer_table {
+    font-family: Verdana, Geneva, sans-serif;
+    color: #666;
+    font-size: 12px;
+}
+.navigation_options {
+    text-align: right;
+    color:white;
+    }

@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:fb="http://www.facebook.com/2008/fbml">
+    <head>
+       <title>Facebook Graph API Stream Publish PHP class</title>
+       <meta name="description" content="PHP Example of creting Facebook Stream Publish using the Graph API." />
+       <link rel="stylesheet" type="text/css" href="styles.css" />
+    </head>
+    <body>
+         <center>
+            <div style="width:1000px; text-align: left">
+                <form id="form1" action="StreamPublishPage.php">
+                    <?php
+                        require_once 'facebook.php';
+                        require_once 'faceconn/faceconn.php';
+                        UseGraphAPI();
+                        include "Banner.php";
+                    ?>
+                    <div style="padding: 10px">
+                        <br />
+                        <h1>Facebook Stream Publish</h1>
+                        
+                        <p style="text-align: justify">
+                        This control is used to publish stories on user profile, friends' profiles or the Facebook page. The example shows how easily you can publish a story on a user profile. Stream
+                        publish has 4 possible media types for publish: image, video, flash and MP3.  The control also has possibility to set JavaScript code which will be executed and form id which
+                        will be submitted after story is successfully published. For this example shown PHP code used for making a story with video media type.
+                        <br /><br />
+                        For all details about the control with description of all optional properties and ways of how to configure all 4 media types please visit 
+                        <b><a href="http://faceconn.com/facebook-stream-publish-php">Facebook Stream Publish Tutorial</a></b>.
+                        <br /><br />
+                        </p>
+                        <?php include "Links.php"; ?>
+                        <br /><br />
+                        <?php
+                            // create instance of stream publich cotrols
+                            $publish = new StreamPublish();
+
+                            // Optional: set story name
+                            $publish->SetName("Story Name");
+
+                            // Optional: set caption
+                            $publish->SetCaption("{*actor*} publish this story:");
+
+                            // Optional: set description
+                            $publish->SetDescription("This is a description of the story");
+                            
+                            // Optional: set css class of publish button
+                            $publish->SetCssClass("facebookbutton");
+
+                            // Optional: set video as media
+                            $publish->SetMedia(new ImageMedia("http://images.vatlab.net/cat.png", "http://vatlab.com"));
+
+                            // Optional: display popup
+                            $publish->SetDisplayPopup(true);
+
+                            // Optional: add action link
+                            $publish->AddActionLink(new ActionLink("Faceconn", "http://faceconn.com"));
+                            $publish->AddActionLink(new ActionLink("Demo", "http://faceconn.com/demo/"));
+
+                            // render component on page
+                            $publish->Render();
+
+                            // render the control on the page
+                            echo "<br /><br />";
+                            include 'CodeExamples/StreamPublishExample.php';
+                        ?>
+                    </div>
+                </form>
+            </div>
+         </center>
+    </body>
+</html>

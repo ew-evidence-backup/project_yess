@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:fb="http://www.facebook.com/2008/fbml">
+    <head>
+       <title>Facebook Graph API Like Button PHP class</title>
+       <meta name="description" content="PHP Example of creting Facebook Like Button using the Graph API." />
+       <link rel="stylesheet" type="text/css" href="styles.css" />
+    </head>
+    <body>
+        <center>
+            <div style="width:1000px; text-align: left">
+                <form id="form1" action="StreamPublishPage.php">
+                    <?php
+                        require_once 'facebook.php';
+                        require_once 'faceconn/faceconn.php';
+                        UseGraphAPI();
+                        include "Banner.php";
+                    ?>
+                    <div style="padding: 10px">
+                        <br />
+                        <h1>Facebook Like Button</h1>
+                        
+                        <p style="text-align: justify">
+                        Like Button is used that user of website can share interested content with their friends. After user clicks on like button inside you page a story in the user's friends' News Feed appears
+                        with link back to your site which increases number of visitors to your site. The example show PHP code needed to make default Like button with defined external URL for likes.
+                         <br /><br />
+                        For all details about the control with description of all optional properties please visit
+                        <b><a href="http://faceconn.com/facebook-like-button-php">Facebook Like Button Tutorial</a></b>.
+                        <br /><br />
+                        </p>
+                        <?php include "Links.php"; ?>
+                        <br /><br />
+                        <?php
+                            // create new instance of the control
+                            $like = new LikeButton();
+
+                            // Optional: set external URL
+                            $like->SetUrl("http://vatlab.com");
+
+                            // render the control on the page
+                            $like->Render();
+
+
+                            // show the code example
+                            echo "<br /><br />";
+                            include 'CodeExamples/LikeButtonExample.php';
+                        ?>
+                    </div>
+                </form>
+            </div>
+        </center>
+    </body>
+</html>

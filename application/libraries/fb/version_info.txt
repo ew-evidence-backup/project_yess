@@ -1,0 +1,86 @@
+Version 2.0.1 [Released on November 30th 2012]
+1. SetExcludedIds and SetMaxRecepients are added to RequestDialog class
+2. Created workaround to fix strange behaviour while getting invited friends 
+   inside IE for RequestDialog and InviteAllFriends classes
+3. Fixed bug of rendering CSS class for command type link of CustomLoginButton class
+
+
+
+Version 2.0 [Released on August 30th 2012]
+1. The toolkit is extended to support Facebook Canvas and Page applications too
+2. Added LikeGate class
+3. Added ResizeCanvas class
+4. Added InviteAllFriends class
+5. Added 3 starter kits (for Facebook Connect, Facebook Canvas, Facebook Page)
+6. RequestDialog is extended to provide invited friends IDs
+7. InviteFriends and InviteFriendsCondensed classes are removed from the toolkit
+
+
+
+Version 1.5 [Released on February 16th 2012]
+1. Added Logout class
+2. Added CustomLoginButton class
+3. Added SetFilters, SetRedirectUri to RequestDialog class
+4. Added image command type and SetImage method to all applicable classes
+5. Added SetUrl and SetColorScheme methods to Comments class
+6. Corrected bug with closing tag with send button
+
+
+
+Version 1.4 [Released on August 9th 2011]
+1. The toolkit and demo application is trasfered on PHP SDK 3.1.1 and new
+   JavaScript with support for oAuth 2.0
+
+
+
+Version 1.3 [Released on June 12th 2011]
+1. Added Send Button class
+2. Added Request dialog class
+3. Added send option to like button
+
+
+
+Version 1.2 [Released on January 23rd 2011]
+1. Added properties to stream publish
+2. Added action links to stream publish
+3. Fixed some minor bugs
+
+
+
+Version 1.1.1 [Released on October 18th 2010]
+1. Fixed error with SetCommandText in StreamPublish class
+2. Fixed error with SetWidth in LikeBox class
+3. Added SetHeight function in LikeBox class
+4. Added SetImportExternalFriends to InviteFriends class
+
+
+
+Version 1.1 [Released on October 8th 2010]
+1. Added several improvements in the demo application based on users' feedback
+2. Added GetOutputHTML method in each UI class to be able to use created
+   HTML in templates
+3. Added action links in Stream Publish class  
+4. Correct bug with url on Like Button
+
+
+
+Version 1.01 [Released on September 26th 2010]
+1. Like button now supports new layout 'box_count'
+2. Stream publish and Extended Permissions classes now have new command 
+   type 'auto' for opening of dialog immediately on page load
+
+
+
+Version 1.0 of Facebook Connect PHP Toolkit is released on September 4th 2010.
+The toolkit is released with following 10 UI classes:
+
+Facebook Login Button
+Facebook Invite Friends
+Facebook Invite Friends Condensed
+Facebook Stream Publish
+Facebook Extended Permissions
+Facebook Like Button
+Facebook Like Box
+Facebook Comments
+Facebook Recommendation
+Facebook Bookmark Button

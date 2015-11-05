@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:fb="http://www.facebook.com/2008/fbml">
+    <head>
+       <title>Facebook Graph API Extended Permissions PHP class</title>
+       <meta name="description" content="PHP Example of creting Facebook Extended Permissions using the Graph API." />
+       <link rel="stylesheet" type="text/css" href="styles.css" />
+    </head>
+    <body>
+         <center>
+            <div style="width:1000px; text-align: left">
+                <form id="form1" action="PermissionsPage.php">
+                    <?php
+                        require_once 'facebook.php';
+                        require_once 'faceconn/faceconn.php';
+                        UseGraphAPI();
+                        include "Banner.php";
+                    ?>
+                    <div style="padding: 10px">
+                        <br />
+                        <h1>Facebook Extended Permissions</h1>
+                        
+                        <p style="text-align: justify">
+                        Permission control is used to allow the user to add extended permissions, like sending upload images and status updates, to Facebook application. It is possible
+                        to define JavaScript code which will be executed and form id which will be submitted after permissions are confirmed by user. This example shows PHP code used
+                        for adding 2 permissions (sending an email and SMS).
+
+                        <br /><br />
+                        For all details about the control with description of all optional properties please visit
+                        <b><a href="http://faceconn.com/facebook-extended-permissions-php">Facebook Extended Permissions Tutorial</a></b>.
+                        <br /><br />
+                        </p>
+                         
+                        <br /><br />
+                        <?php
+                            // create new instance of Permssions control
+                            $perms = new Permissions();
+                            
+                            // set permissions on email and SMS
+                            $perms->SetPermissions("email, sms");
+
+                            // Optional: set CSS class for add permissions button
+                            $perms->SetCssClass("facebookbutton");
+
+                            // Optional: set JavaScript code for confirmation
+                            $perms->SetOnConfirmJavaScript("alert('permissions added')");
+
+                            // Optional: set submit form id for confirmation
+                            $perms->SetOnConfirmSubmitForm("form1");
+
+                            // render the control on the page
+                            $perms->Render();
+
+                            // render the control on the page
+                            echo "<br /><br />";
+                            include 'CodeExamples/PermissionsExample.php';
+                        ?>
+                    </div>
+                </form>
+            </div>
+         </center>
+    </body>
+</html>
+

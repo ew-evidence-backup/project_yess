@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:fb="http://www.facebook.com/2008/fbml">
+    <head>
+       <title>Facebook Graph API Like Box PHP class</title>
+       <meta name="description" content="PHP Example of creting Facebook Like Box using the Graph API." />
+       <link rel="stylesheet" type="text/css" href="styles.css" />
+    </head>
+    <body>
+        <center>
+            <div style="width:1000px; text-align: left">
+                <form id="form1" action="StreamPublishPage.php">
+                    <?php
+                        require_once 'facebook.php';
+                        require_once 'faceconn/faceconn.php';
+                        UseGraphAPI();
+                        include "Banner.php";
+                    ?>
+                    <div style="padding: 10px">
+                        <br />
+                        <h1>Facebook Like Box</h1>
+                        
+                        <p style="text-align: justify">
+                        This control is used to allow users of the web site to become fan of the Facebook page, see messages from the page wall and people who are fans of the page.
+                        The example show creating 3 like boxes. The fist one is default with 10 fans, show stream and show header. The second one is without fan list and the third
+                        one is without fans and stream.
+                        <br /><br />
+                        For all details about the control with description of all optional properties please visit
+                        <b><a href="http://faceconn.com/facebook-like-box-php">Facebook Like Box Tutorial</a></b>.
+                        <br /><br />
+                        </p>
+                        <?php include "Links.php"; ?>
+                        <br /><br />
+                       
+                        <?php
+                            // create instance of the control
+                            $likeBox = new LikeBox();
+
+                            // setting of page Id
+                            $likeBox->SetPageId("185550966885");
+
+                            // render the default control on the page
+                            $likeBox->Render();
+
+                            // render without fan list
+                            $likeBox->SetFansCount(0);
+                            $likeBox->Render();
+
+                            // render without fan list and stream
+                            $likeBox->SetShowStream(false);
+                            $likeBox->Render();
+
+                            // show the code example
+                            echo "<br /><br />";
+                            include 'CodeExamples/LikeBoxExample.php';
+                        ?>
+                    </div>
+                </form>
+            </div>
+        </center>
+    </body>
+</html>

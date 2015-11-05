@@ -1,0 +1,21 @@
+﻿<?xml version="1.0"?>
+<configuration date="2014/07/01" author="e.World Technology Ltd.">
+<project id="{A1E1A318-A966-4120-A8D8-F8227648CCB2}" file="Z:\Documents\development\econlineservices\web\yessay\New Folder\yessey.pmp" name="yessey" product="PHPMaker" version="10.0" datetime="2014/07/01 08:42:50" languagefolder="phplang" userlevel="">
+<table id="Answers" name="Answers" caption="Answers" userlevel="" priv="1"/>
+<table id="Continents" name="Continents" caption="Continents" userlevel="" priv="1"/>
+<table id="Countries" name="Countries" caption="Countries" userlevel="" priv="1"/>
+<table id="Essays" name="Essays" caption="Essays" userlevel="" priv="1"/>
+<table id="Evaluate" name="Evaluate" caption="Evaluate" userlevel="" priv="1"/>
+<table id="EvaluateAnswers" name="EvaluateAnswers" caption="Evaluate Answers" userlevel="" priv="1"/>
+<table id="EvaluateQuestions" name="EvaluateQuestions" caption="Evaluate Questions" userlevel="" priv="1"/>
+<table id="Scores" name="Scores" caption="Scores" userlevel="" priv="1"/>
+<table id="Show" name="Show" caption="Show" userlevel="" priv="1"/>
+<table id="States" name="States" caption="States" userlevel="" priv="1"/>
+<table id="TopicQuestions" name="TopicQuestions" caption="Topic Questions" userlevel="" priv="1"/>
+<table id="Topics" name="Topics" caption="Topics" userlevel="" priv="1"/>
+<table id="UserTypes" name="UserTypes" caption="User Types" userlevel="" priv="1"/>
+<table id="Users" name="Users" caption="Users" userlevel="" priv="1"/>
+<table id="UsersMeta" name="UsersMeta" caption="Users Meta" userlevel="" priv="1"/>
+<table id="VideoCategories" name="VideoCategories" caption="Video Categories" userlevel="" priv="1"/>
+<table id="Videos" name="Videos" caption="Videos" userlevel="" priv="1"/>
+</project></configuration>

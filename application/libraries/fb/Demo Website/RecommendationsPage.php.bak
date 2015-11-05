@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:fb="http://www.facebook.com/2008/fbml">
+    <head>
+       <title>Facebook Graph API Recommendations PHP class</title>
+       <meta name="description" content="PHP Example of creting Facebook Recomendations using the Graph API." />
+       <link rel="stylesheet" type="text/css" href="styles.css" />
+    </head>
+    <body>
+         <center>
+            <div style="width:1000px; text-align: left">
+                <form id="form1" action="StreamPublishPage.php">
+                    <?php
+                        require_once 'facebook.php';
+                        require_once 'faceconn/faceconn.php';
+                        UseGraphAPI();
+                        include "Banner.php";
+                    ?>
+                    <div style="padding: 10px">
+                        <br />
+                        <h1>Facebook Recommendations</h1>
+                        
+                        <p style="text-align: justify">
+                        Recommendations control is used to show a list of interesting content for particular domain. The list is created depending on user personal preferences and
+                        shared content by other people. The example show PHP code for creating the control with default setting: width 300 pixels, height 300 pixels, show header and
+                        light color scheme. Recommendations are set for external domain.
+
+                        <br /><br />
+                        For all details about the control with description of all optional properties please visit
+                        <b><a href="http://faceconn.com/facebook-recommendations-php">Facebook Recommendations Tutorial</a></b>.
+                        <br /><br />
+                        </p>
+                         <?php include "Links.php"; ?>
+                        <br /><br />
+                        <?php
+                            // create new instance of the control
+                            $recomendations = new Recommendations();
+
+                            // set external domain
+                            $recomendations->SetDomain("developers.facebook.com");
+
+                            // render the control on the page
+                            $recomendations->Render();
+
+                            // render the control on the page
+                            echo "<br /><br />";
+                            include 'CodeExamples/RecommendationsExample.php';
+                        ?>
+                    </div>
+                </form>
+            </div>
+         </center>
+    </body>
+</html>

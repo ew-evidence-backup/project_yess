@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:fb="http://www.facebook.com/2008/fbml">
+    <head>
+       <title>Facebook Connect Demo web site</title>
+       <meta name="description" content="Facebook Connet Graph API classes for PHP development." />
+       <link rel="stylesheet" type="text/css" href="styles.css" />
+    </head>
+     <body>
+        <center>
+            <div style="width:1000px; text-align: left">
+                <?php
+                    require_once 'facebook.php';
+                    require_once 'faceconn/faceconn.php';
+                    UseGraphAPI();
+                    include "Banner.php";
+                ?>
+
+                
+
+                <form id="form1">
+                    <div style="padding: 10px">
+                        <br />
+                        <h1>Facebook Connect PHP Toolkit Demo pages</h1>
+
+                        <p style="text-align: justify">
+                        This website is used as an example on how to use Facebook Connesct PHP Toolkit classes. The classes will make Facebook applications development much faster and easier to maintain.
+                        The toolkit contains 10 of the most used UI components for Facebook Connect web sites which are also applicable for Facebook iFrame applications. Each class is supplemented
+                        with a demo page.
+                        <br />
+                        </p>
+                        <br />
+                        <?php
+                            include "Links.php";
+                            // create facebook object.
+                            $facebook = new Facebook(AppConfig::GetKeyArray());
+
+                            // create facebook session
+                            $session = $facebook->getSession();
+
+                            // check if user if connected
+                            if ($session) {
+                                // get user data
+                                $loggedUser = $facebook->api('/me');
+                                echo "<br /><center><b>Hello " . $loggedUser['first_name'];
+                                echo "</b><br /><br />Thank you for trying Faceconn demo website. Please continue trying of all features from the toolkit.<br />";
+                                echo "Please report any issues you have with demo application at info@faceconn.com</center>";
+                            }
+                            else
+                            {
+                                echo"<br><center><b>Please log in by pressing 'Connect with Facebook' button</b></center>";
+                            }
+                        ?>
+                    </div>
+                </form>
+            </div>
+        </center>
+    </body>
+</html>

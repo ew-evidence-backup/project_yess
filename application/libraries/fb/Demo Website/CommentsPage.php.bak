@@ -1,0 +1,47 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns:fb="http://www.facebook.com/2008/fbml" xmlns:og="http://opengraphprotocol.org/schema/">
+    <head>
+       <title>Facebook Graph API Comments PHP class</title>
+       <meta name="description" content="PHP Example of creting Facebook Comments using the Graph API." />
+       <link rel="stylesheet" type="text/css" href="styles.css" />
+    </head>
+    <body>
+         <center>
+            <div style="width:1000px; text-align: left">
+                <form id="form1" action="StreamPublishPage.php">
+                    <?php
+                        require_once 'facebook.php';
+                        require_once 'faceconn/faceconn.php';
+                        UseGraphAPI();
+                        include "Banner.php";
+                    ?>
+                    <div style="padding: 10px">
+                        <br />
+                        <h1>Facebook Comments</h1>
+                        
+                        <p style="text-align: justify">
+                        This control is used to allow a user of your web site to write comments and share them with their friends by posting them on their profiles.
+                        Posting a comment on user's wall will result in more visitors from the Facebook to your site. The example shows PHP code for creating default
+                        Comments control which has 10 displayed comments and width of 550 pixels.
+                        <br /><br />
+                        For all details about the control with description of all optional properties please visit
+                        <b><a href="http://faceconn.com/facebook-comments-php">Facebook Comments Tutorial</a></b>.
+                        <br /><br />
+                        </p>
+                        <?php include "Links.php"; ?>
+                        <br /><br />
+                        <?php
+                            // create new instance of the control and render
+                            $comments = new Comments();
+                            $comments->Render();
+
+                            // show the code example
+                            echo "<br /><br />";
+                            include 'CodeExamples/CommentsExample.php';
+                        ?>
+                    </div>
+                </form>
+            </div>
+         </center>
+    </body>
+</html>
